@@ -2,53 +2,122 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Modo Zekiel - Mis Canales</title>
+  <title>ModoZekiel - Sitio Oficial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Arial Black', sans-serif;
+      font-family: 'Creepster', cursive;
       background: url('https://raw.githubusercontent.com/modozekiel/mis-paginas/main/49.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
       text-align: center;
+      overflow-x: hidden;
     }
+
+    /* Capa de humo y brasas */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9));
+      background-blend-mode: multiply;
+      pointer-events: none;
+    }
+
     h1 {
-      font-size: 3em;
-      margin-top: 60px;
+      font-size: 4em;
+      margin-top: 80px;
       color: #ff1c1c;
-      text-shadow: 3px 3px 10px #000;
+      text-shadow: 0 0 25px #ff0000, 0 0 50px #000;
+      animation: flicker 2s infinite;
     }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {opacity: 1;}
+      20%, 24%, 55% {opacity: 0.6;}
+    }
+
     .links {
-      margin-top: 50px;
+      margin-top: 60px;
     }
+
     .link {
-      display: block;
-      margin: 20px auto;
-      padding: 15px 25px;
-      width: 320px;
-      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 25px auto;
+      padding: 18px 30px;
+      width: 380px;
+      border-radius: 10px;
       text-decoration: none;
       font-size: 1.3em;
       font-weight: bold;
       transition: 0.3s;
-      box-shadow: 0 0 15px rgba(0,0,0,0.7);
+      box-shadow: 0 0 25px rgba(0,0,0,0.9);
+      animation: pulse 4s infinite;
     }
-    .youtube { background: #ff0000; color: #fff; }
-    .tiktok { background: #000; color: #fff; }
-    .instagram { background: #e1306c; color: #fff; }
-    .facebook { background: #1877f2; color: #fff; }
-    .link:hover { transform: scale(1.1); opacity: 0.9; }
+
+    @keyframes pulse {
+      0% {box-shadow: 0 0 10px #000;}
+      50% {box-shadow: 0 0 25px #ff0000;}
+      100% {box-shadow: 0 0 10px #000;}
+    }
+
+    .youtube { background: linear-gradient(145deg, #660000, #ff0000); color: #fff; }
+    .tiktok { background: linear-gradient(145deg, #000, #222); color: #fff; }
+    .instagram { background: linear-gradient(145deg, #33001b, #e1306c); color: #fff; }
+    .facebook { background: linear-gradient(145deg, #001f4d, #1877f2); color: #fff; }
+
+    .link:hover {
+      transform: scale(1.1) rotate(-2deg);
+      opacity: 0.9;
+      filter: drop-shadow(0 0 20px #ff0000);
+    }
+
+    svg {
+      width: 30px;
+      height: 30px;
+      fill: currentColor;
+    }
+
+    .desc {
+      font-size: 0.9em;
+      color: #ccc;
+      margin-top: 5px;
+      text-shadow: 0 0 10px #000;
+    }
   </style>
 </head>
 <body>
-  <h1>🔥 Modo Zekiel 🔥</h1>
+  <h1>🔥 ModoZekiel 🔥</h1>
   <div class="links">
-    <a class="link youtube" href="https://www.youtube.com/@modo_zekiel" target="_blank">🎥 YouTube</a>
-    <a class="link tiktok" href="https://www.tiktok.com/@modo_zekiel?is_from_webapp=1&sender_device=pc" target="_blank">📱 TikTok</a>
-    <a class="link instagram" href="https://www.instagram.com/modozekiel/" target="_blank">📸 Instagram</a>
-    <a class="link facebook" href="https://www.facebook.com/profile.php?id=61585318784152" target="_blank">📘 Facebook</a>
+    <a class="link youtube" href="https://youtube.com/@modozekiel?si=VF3n5JVEoP2rz512" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M10 15l5.2-3L10 9v6zm12-3c0-2.5-.2-4.1-.5-5.2-.3-1.2-1.2-2.1-2.4-2.4C17.9 4 12 4 12 4s-5.9 0-7.1.4c-1.2.3-2.1 1.2-2.4 2.4C2 7.9 2 12 2 12s0 4.1.4 5.2c.3 1.2 1.2 2.1 2.4 2.4C6.1 20 12 20 12 20s5.9 0 7.1-.4c1.2-.3 2.1-1.2 2.4-2.4.3-1.1.5-2.7.5-5.2z"/></svg>
+      YouTube – Terror Real
+    </a>
+    <div class="desc">Videos escalofriantes que te helarán la sangre.</div>
+
+    <a class="link tiktok" href="https://www.tiktok.com/@modo_zekiel?is_from_webapp=1&sender_device=pc" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M12 2c1.1 0 2 .9 2 2v12c0 2.2-1.8 4-4 4s-4-1.8-4-4c0-1.9 1.3-3.5 3-3.9V8c-3.9.5-7 3.9-7 8 0 4.4 3.6 8 8 8s8-3.6 8-8V4c0-1.1-.9-2-2-2h-2z"/></svg>
+      TikTok – Clips Perturbadores
+    </a>
+    <div class="desc">Momentos aterradores que no podrás olvidar.</div>
+
+    <a class="link instagram" href="https://www.instagram.com/modozekiel/" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-2a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
+      Instagram – Imágenes Malditas
+    </a>
+    <div class="desc">Fotos de horror que te perseguirán.</div>
+
+    <a class="link facebook" href="https://www.facebook.com/profile.php?id=61585318784152" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.1 8.5 9.9v-7H8v-3h2.5V9.5c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12H16l-.5 3h-2v7c4.8-.8 8.5-4.9 8.5-9.9z"/></svg>
+      Facebook – Comunidad Oscura
+    </a>
+    <div class="desc">Únete a nuestra siniestra comunidad.</div>
   </div>
 </body>
 </html>
-
